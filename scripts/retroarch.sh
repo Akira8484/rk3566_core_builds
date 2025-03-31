@@ -87,7 +87,9 @@ tag="v1.18.0"
 	    --enable-opengles3_2 \
 	    --enable-ozone \
 	    --enable-udev \
+     --disable-odroidgo2 \
 	    --enable-wifi
+
       else
 	    CFLAGS="-Ofast -march=armv8-a -mtune=cortex-a55 -mfpu=neon-fp-armv8 -mfloat-abi=hard -fomit-frame-pointer -DNDEBUG -DUDEV_TOUCH_SUPPORT" \
 	    ./configure \
