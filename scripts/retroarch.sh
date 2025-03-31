@@ -41,7 +41,7 @@ tag="v1.18.0"
           echo " "
           echo "Skipping the $patching for now and making a note to apply that later"
           sleep 3
-          retroarch_rgapatch="yes"
+          retroarch_rgapatch="no"
         else
 		   patch -Np1 < "$patching"
 		   if [[ $? != "0" ]]; then
@@ -62,7 +62,7 @@ tag="v1.18.0"
 	    --enable-opengl_core \
 	    --disable-opengl1 \
 	    --disable-qt \
-	    --disable-sdl \
+	    --enable-sdl \
 	    --disable-vg \
 	    --disable-vulkan \
 	    --disable-vulkan_display \
@@ -101,8 +101,8 @@ tag="v1.18.0"
 	    --disable-vg \
 	    --disable-vulkan \
 	    --disable-vulkan_display \
-	    --disable-wayland \
-	    --disable-x11 \
+	    --enable-wayland \
+	    --enable-x11 \
         --disable-xrandr \
         --disable-winrawinput \
         --disable-gdi \
@@ -154,7 +154,7 @@ tag="v1.18.0"
 		echo "retroarch-rgarotated has been created and has been placed in the rk3566_core_builds/retroarch$bitness subfolder"
 	  fi
 
-      if [[ $retroarch_rgapatch == "yes" ]]; then
+      if [[ $retroarch_rgapatch == "no" ]]; then
     	  for patching in retroarch-patch*
       	  do
        	    patch -Np1 < "$patching"
