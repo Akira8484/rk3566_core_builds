@@ -11,7 +11,7 @@
 
 cur_wd="$PWD"
 bitness="$(getconf LONG_BIT)"
-tag="v1.20.0"
+tag="v1.18.0"
 
 	# Libretro Retroarch build
 	if [[ "$var" == "retroarch" ]]; then
@@ -57,17 +57,17 @@ tag="v1.20.0"
 	    CFLAGS="-Ofast -march=armv8-a -mtune=cortex-a55 -fomit-frame-pointer -DNDEBUG -DUDEV_TOUCH_SUPPORT" \
 	    ./configure \
 	    --disable-caca \
-	    --disable-mali_fbdev \
-	    --disable-opengl \
-	    --disable-opengl_core \
+	    --enable-mali_fbdev \
+	    --enable-opengl \
+	    --enable-opengl_core \
 	    --disable-opengl1 \
 	    --disable-qt \
 	    --disable-sdl \
 	    --disable-vg \
 	    --disable-vulkan \
 	    --disable-vulkan_display \
-	    --disable-wayland \
-	    --disable-x11 \
+	    --enable-wayland \
+	    --enable-x11 \
 	    --disable-xrandr \
 	    --disable-winrawinput \
 	    --disable-gdi \
@@ -81,7 +81,6 @@ tag="v1.20.0"
 	    --enable-freetype \
 	    --enable-kms \
 	    --enable-networking \
-	    --enable-odroidgo2 \
 	    --enable-opengles \
 	    --enable-opengles3 \
 	    --enable-opengles3_1 \
@@ -93,12 +92,12 @@ tag="v1.20.0"
 	    CFLAGS="-Ofast -march=armv8-a -mtune=cortex-a55 -mfpu=neon-fp-armv8 -mfloat-abi=hard -fomit-frame-pointer -DNDEBUG -DUDEV_TOUCH_SUPPORT" \
 	    ./configure \
 	    --disable-caca \
-	    --disable-mali_fbdev \
-	    --disable-opengl \
-	    --disable-opengl_core \
+	    --enable-mali_fbdev \
+	    --enable-opengl \
+	    --enable-opengl_core \
 	    --disable-opengl1 \
 	    --disable-qt \
-	    --disable-sdl \
+	    --enable-sdl \
 	    --disable-vg \
 	    --disable-vulkan \
 	    --disable-vulkan_display \
@@ -118,7 +117,7 @@ tag="v1.20.0"
 	    --enable-kms \
 	    --enable-neon \
 	    --enable-networking \
-	    --enable-odroidgo2 \
+	    --disable-odroidgo2 \
 	    --enable-opengles \
 	    --enable-opengles3 \
 	    --enable-opengles3_1 \
